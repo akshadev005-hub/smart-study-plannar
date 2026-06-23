@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+  content="width=device-width, initial-scale=1.0">
+
+  <title>FocusFlow</title>
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ICONS -->
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- SIDEBAR -->
+
+  <div class="sidebar">
+
+    <h2>⚡ FocusFlow</h2>
+
+    <ul>
+
+      <li>
+        <i class="fa-solid fa-house"></i>
+        Dashboard
+      </li>
+
+      <li>
+        <i class="fa-solid fa-chart-line"></i>
+        Productivity
+      </li>
+
+      <li>
+        <i class="fa-solid fa-clock"></i>
+        Pomodoro
+      </li>
+
+      <li>
+        <i class="fa-solid fa-bullseye"></i>
+        Goals
+      </li>
+
+    </ul>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+
+  <div class="main">
+
+    <!-- TOP -->
+
+    <div class="top">
+
+      <div>
+
+        <h1>Smart Productivity Planner</h1>
+
+        <p id="dateTime"></p>
+
+      </div>
+
+      <button id="themeBtn">🌙</button>
+
+    </div>
+
+    <!-- QUOTE -->
+
+    <div class="quote-box">
+
+      <h2 id="quote">
+        “Discipline beats motivation.”
+      </h2>
+
+      <p>— FocusFlow Productivity</p>
+
+    </div>
+
+    <!-- QUICK TOOLS -->
+
+    <div class="tools-section">
+
+      <h2>🚀 Quick Study Tools</h2>
+
+      <div class="tools-grid">
+
+        <a
+        href="https://chatgpt.com"
+        target="_blank"
+        class="tool-card">
+
+          <i class="fa-solid fa-robot"></i>
+
+          <h3>Open ChatGPT</h3>
+
+          <p>Solve doubts instantly</p>
+
+        </a>
+
+        <a
+        href="https://github.com"
+        target="_blank"
+        class="tool-card">
+
+          <i class="fa-brands fa-github"></i>
+
+          <h3>GitHub</h3>
+
+          <p>Manage projects & code</p>
+
+        </a>
+
+        <a
+        href="https://youtube.com"
+        target="_blank"
+        class="tool-card">
+
+          <i class="fa-brands fa-youtube"></i>
+
+          <h3>YouTube</h3>
+
+          <p>Watch study tutorials</p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats">
+
+      <div class="card">
+
+        <h3 id="totalTasks">0</h3>
+
+        <p>Total Tasks</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3 id="completedTasks">0</h3>
+
+        <p>Completed</p>
+
+      </div>
+
+      <div class="card">
+
+        <h3 id="pendingTasks">0</h3>
+
+        <p>Pending</p>
+
+      </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+      <input
+      type="text"
+      id="searchInput"
+      placeholder="Search Tasks..."
+      onkeyup="searchTasks()">
+
+    </div>
+
+    <!-- TASK INPUT -->
+
+    <div class="task-input">
+
+      <input
+      type="text"
+      id="taskInput"
+      placeholder="Enter your study task">
+
+      <select id="remarkInput">
+
+        <option>High Priority</option>
+
+        <option>Need Revision</option>
+
+        <option>Exam Tomorrow</option>
+
+        <option>Need Practice</option>
+
+        <option>Important</option>
+
+        <option>Completed Revision</option>
+
+      </select>
+
+      <button onclick="addTask()">
+        Add Task
+      </button>
+
+    </div>
+
+    <!-- PROGRESS -->
+
+    <div class="progress-section">
+
+      <h3>Daily Progress</h3>
+
+      <div class="progress-bar">
+
+        <div id="progress"></div>
+
+      </div>
+
+      <p id="progressText">
+        0% Completed
+      </p>
+
+    </div>
+
+    <!-- DAILY GOAL -->
+
+    <div class="goal-section">
+
+      <h2>🎯 Daily Study Goal</h2>
+
+      <input
+      type="number"
+      id="goalInput"
+      placeholder="Enter study goal in hours">
+
+      <button onclick="setGoal()">
+        Set Goal
+      </button>
+
+      <div class="goal-progress">
+
+        <div class="circle">
+
+          <h1 id="goalHours">
+            0h
+          </h1>
+
+        </div>
+
+      </div>
+
+      <p id="goalText">
+        No goal set
+      </p>
+
+    </div>
+
+    <!-- TIMER -->
+
+    <div class="timer">
+
+      <h2>⏳ Pomodoro Timer</h2>
+
+      <h1 id="timer">
+        25:00
+      </h1>
+
+      <button onclick="startTimer()">
+        Start
+      </button>
+
+      <button onclick="resetTimer()">
+        Reset
+      </button>
+
+    </div>
+
+    <!-- MUSIC -->
+
+    <div class="music-section">
+
+      <h2>🎵 Lo-fi Study Music</h2>
+
+      <audio controls>
+
+        <source
+        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        type="audio/mpeg">
+
+      </audio>
+
+    </div>
+
+    <!-- TASK LIST -->
+
+    <div id="taskList"></div>
+
+  </div>
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
