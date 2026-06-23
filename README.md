@@ -1,4 +1,4 @@
-# Smart Study Plannar
+# Smart Study Planner
 
 A modern productivity dashboard built using HTML, CSS, and JavaScript.
 
